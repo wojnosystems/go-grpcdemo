@@ -1,0 +1,17 @@
+syntax = "proto3";
+package proto;
+option go_package = "pkg/proto";
+
+service DogSayService {
+    rpc Say(BarkRequest) returns (BarkResponse);
+}
+
+message BarkRequest {
+    string name = 1;
+    string message = 2;
+    int32  age = 3;
+}
+
+message BarkResponse {
+    string out = 1;
+}
