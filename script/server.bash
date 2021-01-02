@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-docker-compose up backend
+docker-compose up --build backend
