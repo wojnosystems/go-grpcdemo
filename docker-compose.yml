@@ -1,0 +1,16 @@
+version: "3"
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend.Dockerfile
+    image: grpcdemo/server
+    ports:
+      - "8500:8500"
+  client:
+    build:
+      context: .
+      dockerfile: client.Dockerfile
+    image: grpcdemo/client
+    depends_on:
+      - backend
